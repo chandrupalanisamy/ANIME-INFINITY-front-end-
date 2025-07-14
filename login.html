@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/281fee4b-ffe6-4523-92a8-a2ee7513ad64/dc4lwsy-517df297-8cd3-40a3-bba1-2a65e1c7663e.jpg/v1/fill/w_1600,h_900,q_75,strp/goku_full_ultra_instinct_vs_jiren_by_maniaxoi_dc4lwsy-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI4MWZlZTRiLWZmZTYtNDUyMy05MmE4LWEyZWU3NTEzYWQ2NFwvZGM0bHdzeS01MTdkZjI5Ny04Y2QzLTQwYTMtYmJhMS0yYTY1ZTFjNzY2M2UuanBnIiwiaGVpZ2h0IjoiPD05MDAiLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC8yODFmZWU0Yi1mZmU2LTQ1MjMtOTJhOC1hMmVlNzUxM2FkNjRcL21hbmlheG9pLTQucG5nIiwib3BhY2l0eSI6OTUsInByb3BvcnRpb25zIjowLjQ1LCJncmF2aXR5IjoiY2VudGVyIn19.FnAV53y6wLcvZ_d130TXHJOQ5-TRKQgC30vCVqHnoaU') no-repeat center center/cover;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            width: 450px;
+            padding: 2rem;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 15px rgba(167, 139, 250, 0.7);
+            color: #fff;
+            text-align: center;
+            position: absolute;
+        }
+        .hidden { display: none; }
+        .title {
+            font-size: 2rem;  
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
+        }
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            font-size: 1rem;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 1rem;
+        }
+        .sign {
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(45deg, #ff0099, #4939ff);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .sign:hover {
+            background: linear-gradient(45deg, #4939ff, #ff0099);
+            box-shadow: 0 0 15px rgba(167, 139, 250, 1);
+        }
+        .signup a {
+            color: #a78bfa;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="login-form">
+        <p class="title"><i class="fas fa-infinity" style="color: red;"></i>Anime Login</p>
+        <form>
+            <div class="input-group">
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+            </div>
+            <a href="index.html"><button type="button" class="sign">Sign in</button></a>
+        </form>
+        <p class="signup">Don't have an account? <a onclick="toggleForm()">Sign up</a></p>
+    </div>
+    
+    <div class="form-container hidden" id="signup-form">
+        <p class="title"><i class="fas fa-infinity" style="color: red;"></i>Sign Up</p>
+        <form>
+            <div class="input-group">
+                <label for="signup-username">Username</label>
+                <input type="text" id="signup-username" placeholder="Enter your username" required>
+            </div>
+            <div class="input-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" placeholder="Enter your password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+            </div>
+            <button type="button" class="sign">Sign Up</button>
+        </form>
+        <p class="signup">Already have an account? <a onclick="toggleForm()">Log in</a></p>
+    </div>
+    
+    <script>
+        function toggleForm() {
+            document.getElementById('login-form').classList.toggle('hidden');
+            document.getElementById('signup-form').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
